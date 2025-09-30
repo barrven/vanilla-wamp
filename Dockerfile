@@ -35,6 +35,10 @@ COPY php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
+RUN mkdir -p /var/www/html/data \
+    && chown -R www-data:www-data /var/www/html/data \
+    && chmod -R 755 /var/www/html/data
+
 # Expose port 80 for web access
 EXPOSE 80
 
